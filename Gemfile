@@ -45,3 +45,6 @@ end
 
 # user authentication
 gem 'devise'
+#upload files
+gem 'carrierwave'
+gem 'rmagick'
