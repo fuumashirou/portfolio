@@ -48,3 +48,5 @@ gem 'devise'
 #upload files
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'bootstrap3-rails'

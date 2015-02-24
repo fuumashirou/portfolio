@@ -1,1 +1,1 @@
-$('#picture').lightbox(options)
+$('#picture').lightbox({ keyboard: "true" });
