@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   resources :products
 
-  get 'home/index'
+  #get 'home/index'
+  #get 'home/index' => 'products#index'
   #get 'usuario/edad/:edad' => 'home#index'
   get 'usuario/:nombre/:edad' => 'home#index'
 
-  root 'home#index'
+  #root 'home#index'
+  root 'products#index'
+
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
