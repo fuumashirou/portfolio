@@ -16,5 +16,6 @@
 //= require bootstrap-modal
 //= require bootstrap-modalmanager
 //= require turbolinks
+//= require main
 //= require_tree .
 

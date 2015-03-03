@@ -13,6 +13,8 @@
  *= require bootstrap_and_overrides
  *= require bootstrap-modal-bs3patch 
  *= require bootstrap-modal
+ *= require main
+ *= require reset
  *= require_tree .
  *= require_self
  */
