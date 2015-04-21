@@ -5,11 +5,45 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="author" content="pixelhint.com">
+  <meta name="description" content="Magnetic is a stunning responsive HTML5/CSS3 photography/portfolio website template"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+  <div id="menu_icon"></div>
+    <nav>
+      <ul>
+        <li> <%= link_to "home",root_path %></li>
+       <!--  <li><a href="index.html" class="selected">Home</a></li> -->
+        <li><a href="#">About</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav><!-- end navigation menu -->
+
+<!-- <div class="footer clearfix">
+      <ul class="social clearfix">
+        <li><a href="#" class="fb" data-title="Facebook"></a></li>
+        <li><a href="#" class="google" data-title="Google +"></a></li>
+        <li><a href="#" class="behance" data-title="Behance"></a></li> -->
+        <!--<li><a href="#" class="twitter" data-title="Twitter"></a></li>
+        <li><a href="#" class="dribble" data-title="Dribble"></a></li>-->
+<!--         <li><a href="#" class="rss" data-title="RSS"></a></li>
+      </ul> --><!-- end social -->
+
+<!--       <div class="rights">
+        <p>Copyright © 2014 magnetic.</p>
+        <p>Template by <a href="">Pixelhint.com</a></p>
+      </div> --><!-- end rights -->
+    <!-- </div > --><!-- end footer -->
+
 </head>
 <body>
 
-  <!-- flash notice for rails notifications -->
-<% if notice %>
+   <!-- flash notice for rails notifications -->
+
+  <% if notice %>
  <p class="alert alert-success">
   <button type="button" class="close" data-dismiss="alert">
     <span aria-hidden="true">&times;</span>
@@ -28,7 +62,7 @@
 <!-- Devise Validation-->
  <div id="user_nav">
   <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
+    Conectado como: <%= current_user.email %>. No eres tú?
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
@@ -72,6 +106,10 @@
 <!-- End Template -->
 
 <%= disqus_init %>
+
+  <%= link_to image_tag("logo.png", title: "Magnetic", alt: "Magnetic"), root_path %>
+
+ 
 
 
 <%= yield %>
