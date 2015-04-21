@@ -16,5 +16,6 @@
 //= require bootstrap-modal
 //= require bootstrap-modalmanager
 //= require turbolinks
+//= require disqus_rails
 //= require_tree .
 

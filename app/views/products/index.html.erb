@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Listing Products</h1>
 
@@ -30,4 +30,28 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path %> -->
+
+<!-- testeo -->
+
+<section class="main clearfix">
+  <section class="top"> 
+     <%= link_to 'New Product', new_product_path %>  
+  </section>
+  <% @products.each do |product| %>
+    <div class="work">
+       <%= link_to product_path(product.id) do %>
+        <%=  image_tag(product.image.list.url, class: "media") %>
+        <div class="caption">
+          <div class="work_title">
+            <h1><%= product.title %></h1>
+          </div>
+        </div>
+      <%end %>
+    </div>
+    <% end %>
+
+
+  </section>
+
+  

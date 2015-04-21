@@ -53,3 +53,5 @@ gem 'rmagick'
 gem "twitter-bootstrap-rails"
 
 gem 'bootstrap-modal-rails'
+
+gem 'disqus_rails'
