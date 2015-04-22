@@ -12,14 +12,21 @@
       </p>
 
       <a href="#lightbox" data-toggle="modal"> 
-      	<%= image_tag(@product.image.medium.url) %> 
+      	<p><%= image_tag(@product.image.medium.url) %> </p>
       </a>
 
-
-
+      <p><strong><% if current_user.present? %>
+        <%= link_to 'Edit', edit_product_path(@product) %> |
+        <%= link_to 'Back', products_path %>
+        <%= link_to content_tag('i',' Delete', class: 'fa fa-trash-o'), product_path(@product), method: :delete, data: { confirm: '¿Está seguro de eliminar esta receta?' }, title: 'Eliminar' %>
+    <% else %>
+        <%= link_to 'Back', products_path %>
+    <% end %>
+     </p></strong>
+<!-- 
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %>
-      <%= link_to content_tag('i',' Delete', class: 'fa fa-trash-o'), product_path(@product), method: :delete, data: { confirm: '¿Está seguro de eliminar esta receta?' }, title: 'Eliminar' %>
+      <%= link_to content_tag('i',' Delete', class: 'fa fa-trash-o'), product_path(@product), method: :delete, data: { confirm: '¿Está seguro de eliminar esta receta?' }, title: 'Eliminar' %> -->
 
 
       <!-- se uso el primer ejemplo (se modificó un poco) de la pag http://nakupanda.github.io/bootstrap3-dialog/ -->

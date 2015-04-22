@@ -35,9 +35,12 @@
 <!-- testeo -->
 
 <section class="main clearfix">
-  <section class="top"> 
-     <%= link_to 'New Product', new_product_path %>  
-  </section>
+  <% if current_user.present? %>
+     <section class="top"> 
+       <%= link_to 'New Product', new_product_path %>  
+    </section> 
+  <% end%>
+  
   <% @products.each do |product| %>
     <div class="work">
        <%= link_to product_path(product.id) do %>
