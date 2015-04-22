@@ -2,12 +2,12 @@
   <section class="wrapper">
     <div class="content">
       <p>
-       <strong>Title:</strong>
+       <strong><%= t("products.title") %>:</strong>
        <%= @product.title %>
       </p>
 
       <p>
-      <strong>Description:</strong>
+      <strong><%= t("products.description") %>:</strong>
       <%= @product.description %>
       </p>
 
@@ -15,12 +15,15 @@
       	<p><%= image_tag(@product.image.medium.url) %> </p>
       </a>
 
+<!-- 
+<%= t "products.back" %> -->
+
       <p><strong><% if current_user.present? %>
-        <%= link_to 'Edit', edit_product_path(@product) %> |
-        <%= link_to 'Back', products_path %>
-        <%= link_to content_tag('i',' Delete', class: 'fa fa-trash-o'), product_path(@product), method: :delete, data: { confirm: '¿Está seguro de eliminar esta receta?' }, title: 'Eliminar' %>
+        <%= link_to t("products.edit"), edit_product_path(@product) %> |
+        <%= link_to t("products.back"), products_path %>
+        <%= link_to content_tag('i',t("products.delete"), class: 'fa fa-trash-o'), product_path(@product), method: :delete, data: { confirm: '¿Está seguro de eliminar esta receta?' }, title: 'Eliminar' %>
     <% else %>
-        <%= link_to 'Back', products_path %>
+        <%= link_to t("products.back"), products_path %>
     <% end %>
      </p></strong>
 <!-- 

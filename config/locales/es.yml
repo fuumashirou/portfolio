@@ -1,0 +1,13 @@
+
+es:
+ products:
+  edit: "Editar"
+  back: "Atrás"
+  new_product: "Nuevo Producto"
+  delete: "Borrar"
+  title: "Titulo"
+  description: "Descripción"
+ layouts:
+  home: "Inicio"
+  contact: "Contáctame"
+  about: "Sobre Mí"

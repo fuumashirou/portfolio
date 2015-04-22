@@ -37,7 +37,7 @@
 <section class="main clearfix">
   <% if current_user.present? %>
      <section class="top"> 
-       <%= link_to 'New Product', new_product_path %>  
+       <%= link_to t("products.new_product"), new_product_path %>  
     </section> 
   <% end%>
   
