@@ -13,6 +13,10 @@ before_action :authenticate_user!
 
   end
 
+  def about
+
+  end
+
 private
 
 	def go_google

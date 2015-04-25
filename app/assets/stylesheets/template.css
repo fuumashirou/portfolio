@@ -350,6 +350,20 @@ h5, h6          { font-weight: bolder }
 /*  Inner Page  */
 .top{
     width: 100%;
+    height: 350px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    background: url('Inner_About2.jpg') no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: 50% 50%;
+
+}
+.topIndex{
+    width: 100%;
     /*height: 350px;*/
     height: 20px;
     overflow: hidden;
@@ -368,6 +382,7 @@ h5, h6          { font-weight: bolder }
     font-size: 15px;
     line-height: 24px;
 }
+
 
 .work_nav{
     display: block;

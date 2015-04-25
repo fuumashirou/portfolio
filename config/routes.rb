@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   #get 'usuario/edad/:edad' => 'home#index'
   get 'usuario/:nombre/:edad' => 'home#index'
 
+  get 'about' => 'home#about'
+
   #root 'home#index'
   root 'products#index'
 
