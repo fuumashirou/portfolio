@@ -38,30 +38,20 @@
 <!-- Begin Template -->
 <header>
     <div class="logo">
-      <a <%= link_to image_tag("logo.png"), products_path %>></a>
+       <%= link_to image_tag("portfolio_idle.gif"), products_path %>
     </div><!-- end logo -->
 
     <div id="menu_icon"></div>
     <nav>
       <ul>
-        <li><a ><%= link_to 'Home', products_path %></a></li>
-        <!--<li><a href="index.html" class="selected">Home</a></li>-->
-        <li><a href="#">About</a></li>
-        <li><a href="#">The Team</a></li>
-        <li><a href="#">Journal</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><%= link_to t("layouts.home"), products_path %></li>
+        <li><%= link_to t("layouts.about"), about_path %></li>
+        <li><%= link_to t("layouts.contact"), contact_path %></li>
       </ul>
     </nav><!-- end navigation menu -->
 
     <div class="footer clearfix">
-      <ul class="social clearfix">
-        <li><a href="#" class="fb" data-title="Facebook"></a></li>
-        <li><a href="#" class="google" data-title="Google +"></a></li>
-        <li><a href="#" class="behance" data-title="Behance"></a></li>
-        <!--<li><a href="#" class="twitter" data-title="Twitter"></a></li>
-        <li><a href="#" class="dribble" data-title="Dribble"></a></li>-->
-        <li><a href="#" class="rss" data-title="RSS"></a></li>
-      </ul><!-- end social -->
+     
 
       <div class="rights">
         <p>Copyright © 2014 magnetic.</p>

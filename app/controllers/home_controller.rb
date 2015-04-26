@@ -17,6 +17,10 @@ before_action :authenticate_user!
 
   end
 
+  def contact
+
+  end
+
 private
 
 	def go_google
