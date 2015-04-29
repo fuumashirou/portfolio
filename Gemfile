@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -43,3 +43,18 @@ group :development, :test do
   gem 'spring'
 end
 
+# user authentication
+gem 'devise'
+#upload files
+gem 'carrierwave'
+gem 'rmagick'
+
+# image effects
+gem "twitter-bootstrap-rails"
+
+gem 'bootstrap-modal-rails'
+
+gem 'disqus_rails'
+
+#internationalization
+gem "i18n"

@@ -1,0 +1,60 @@
+<section class="main clearfix">
+  <section class="wrapper">
+    <div class="content">
+      <p>
+       <strong><%= t("products.title") %>:</strong>
+       <%= @product.title %>
+      </p>
+
+      <p>
+      <strong><%= t("products.description") %>:</strong>
+      <%= @product.description %>
+      </p>
+
+      <a href="#lightbox" data-toggle="modal"> 
+      	<p><%= image_tag(@product.image.medium.url) %> </p>
+      </a>
+
+<!-- 
+<%= t "products.back" %> -->
+
+      <p><strong><% if current_user.present? %>
+        <%= link_to t("products.edit"), edit_product_path(@product) %> |
+        <%= link_to t("products.back"), products_path %>
+        <%= link_to content_tag('i',t("products.delete"), class: 'fa fa-trash-o'), product_path(@product), method: :delete, data: { confirm: '¿Está seguro de eliminar esta receta?' }, title: 'Eliminar' %>
+    <% else %>
+        <%= link_to t("products.back"), products_path %>
+    <% end %>
+     </p></strong>
+<!-- 
+      <%= link_to 'Edit', edit_product_path(@product) %> |
+      <%= link_to 'Back', products_path %>
+      <%= link_to content_tag('i',' Delete', class: 'fa fa-trash-o'), product_path(@product), method: :delete, data: { confirm: '¿Está seguro de eliminar esta receta?' }, title: 'Eliminar' %> -->
+
+
+      <!-- se uso el primer ejemplo (se modificó un poco) de la pag http://nakupanda.github.io/bootstrap3-dialog/ -->
+
+      <div class="modal fade" data-width="70%" data-height="70%" id="lightbox" >
+        <!-- <div class="modal-dialog"> -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <!-- <h4 class="modal-title">Modal title</h4> -->
+            </div>
+            <div class="modal-body">
+              <%= image_tag(@product.image.url) %> 
+            </div>
+            <!-- <div class="modal-footer"> -->
+              <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
+      <%- disqus_thread %>
+    </div>
+  </section>
+
+</section>

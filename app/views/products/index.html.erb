@@ -1,0 +1,60 @@
+<!-- <p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td><%= image_tag product.image.thumb.url %></td>
+        <td><%= product.user %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %> -->
+
+<!-- testeo -->
+
+<section class="main clearfix">
+  <% if current_user.present? %>
+     <section class="topIndex"> 
+       <%= link_to t("products.new_product"), new_product_path %>  
+    </section> 
+  <% end%>
+  
+  <% @products.each do |product| %>
+    <div class="work">
+       <%= link_to product_path(product.id) do %>
+        <%=  image_tag(product.image.list.url, class: "media") %>
+        <div class="caption">
+          <div class="work_title">
+            <h1><%= product.title %></h1>
+          </div>
+        </div>
+      <%end %>
+    </div>
+    <% end %>
+
+
+  </section>
+
+  

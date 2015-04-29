@@ -8,6 +8,62 @@
 </head>
 <body>
 
+  <!-- flash notice for rails notifications -->
+<% if notice %>
+ <p class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert">
+    <span aria-hidden="true">&times;</span>
+    <span class="sr-only"> Close</span></button> 
+    <i class="fa fa-check"></i> <%= notice %>
+     </p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+    <span class="sr-only"> Close</span></button>
+    <i class="fa fa-exclamation-triangle"></i> <%= alert %> 
+  </p>
+ <% end %>
+
+<!-- Devise Validation-->
+ <div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  <% end %>
+</div> 
+
+<!-- Begin Template -->
+<header>
+    <div class="logo">
+       <%= link_to image_tag("portfolio_idle.gif"), products_path %>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+      <ul>
+        <li><%= link_to t("layouts.home"), products_path %></li>
+        <li><%= link_to t("layouts.about"), about_path %></li>
+        <li><%= link_to t("layouts.contact"), contact_path %></li>
+      </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+     
+
+      <div class="rights">
+<!--         <p>Copyright © 2014 magnetic.</p>
+        <p>Template by <a href="">Pixelhint.com</a></p> -->
+      </div><!-- end rights -->
+    </div ><!-- end footer -->
+  </header><!-- end header -->
+<!-- End Template -->
+
+<%= disqus_init %>
+
+
 <%= yield %>
 
 </body>
