@@ -45,10 +45,9 @@ group :development, :test do
   gem 'mysql2'
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+gem 'pg'
+gem 'rails_12factor'
+
 
 # user authentication
 gem 'devise'
