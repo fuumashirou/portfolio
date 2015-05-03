@@ -15,11 +15,12 @@ default: &default
   pool: 5
   username: root
   password:
-  socket: /var/run/mysqld/mysqld.sock
+   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
   database: portfolio_development
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -48,7 +49,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: portfolio_production
-  username: portfolio
-  password: <%= ENV['PORTFOLIO_DATABASE_PASSWORD'] %>
+ database: portfolio_production
+ username: portfolio
+ password: <%= ENV['PORTFOLIO_DATABASE_PASSWORD'] %>
+ adapter: postgresql 
+ encoding: unicode 
+ pool: 5 
+ host: localhost

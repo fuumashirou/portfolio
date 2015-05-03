@@ -4,7 +4,8 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '8ee63ce4afe2bb9a08bcfaccd25c23730c4fcf916c953c4198caf44f28b8418a4fad300baaf7e8f89acda2a7dae55ee9b4f210ee69d1def12c829147aee6737f'
+  config.secret_key = '4450b9680701667743eb96d17991cf09cb759587c333cc69ecc2283c2d89ffc4bb16ff7726e23b36b64e2721ab1b06a6799384aa09b3aaf19b0e0d8eb346798e
+'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -145,12 +146,12 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  # config.email_regexp = /\A[^@]+@[^@]+\z/
+  config.email_regexp = /\A[^@]+@[^@]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
+  config.timeout_in = 60.minutes
 
   # If true, expires auth token on session timeout.
   # config.expire_auth_token_on_timeout = false
@@ -173,10 +174,10 @@ Devise.setup do |config|
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
-  # config.maximum_attempts = 20
+  config.maximum_attempts = 5
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
-  # config.unlock_in = 1.hour
+  config.unlock_in = 10.minutes
 
   # Warn on the last attempt before the account is locked.
   # config.last_attempt_warning = true
@@ -189,7 +190,7 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
-  config.reset_password_within = 6.hours
+  config.reset_password_within = 24.hours
 
   # ==> Configuration for :encryptable
   # Allow you to use another encryption algorithm besides bcrypt (default). You can use
